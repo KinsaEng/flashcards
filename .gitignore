@@ -1,44 +1,5 @@
 # Node modules
 node_modules/
-
-# Expo specific
-.expo/
-dist/
-web-build/
-expo-env.d.ts
-
-# Native build
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-
-# Metro bundler
-.metro-health-check*
-
-# Debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS files
-.DS_Store
-*.pem
-
 # Local environment variables
 .env*
 .env.local
-
-# TypeScript build files
-*.tsbuildinfo
-
-# Expo / React Native build files
-*.apk
-*.aab
-*.hmap
-*.hbuild
-
-# Coverage reports
-coverage/
