@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.pressable{
+    @apply bg-[#3584e4] rounded-lg p-3 flex-1 mx-1;
+}
+
+.button-text{
+    @apply text-white text-center text-xl font-black;
+}
+
+.normal-text{
+    @apply text-center text-white text-2xl;
+}
+
+.big-text{
+    @apply text-center text-white text-5xl;
+}
+
+.container{
+    @apply  bg-zinc-800 rounded-lg flex justify-center;
+}
+
+.popup{
+    @apply absolute w-screen h-screen bg-black/70 z-50 flex-1 justify-center;
+}
