@@ -1,13 +1,13 @@
-# dependencies
+# Node modules
 node_modules/
 
-# Expo
+# Expo specific
 .expo/
 dist/
 web-build/
 expo-env.d.ts
 
-# Native (React Native specific)
+# Native build
 *.orig.*
 *.jks
 *.p8
@@ -15,15 +15,15 @@ expo-env.d.ts
 *.key
 *.mobileprovision
 
-# Metro
+# Metro bundler
 .metro-health-check*
 
-# Debug logs
+# Debug
 npm-debug.*
 yarn-debug.*
 yarn-error.*
 
-# macOS
+# macOS files
 .DS_Store
 *.pem
 
@@ -31,8 +31,14 @@ yarn-error.*
 .env*
 .env.local
 
-# TypeScript
+# TypeScript build files
 *.tsbuildinfo
 
-# Optional files
-app-example
+# Expo / React Native build files
+*.apk
+*.aab
+*.hmap
+*.hbuild
+
+# Coverage reports
+coverage/
