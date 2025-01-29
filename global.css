@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .pressable{
     @apply bg-[#3584e4] rounded-lg p-3 flex-1 mx-1;
 }
