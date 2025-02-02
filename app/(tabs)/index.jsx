@@ -38,6 +38,16 @@ export default function HomeScreen() {
       cards: decks[getIndex()]
     })
   }
+
+
+  function routeToStudy(){
+    navigation.navigate("EditScreen",{
+      deckIndex: getIndex(),
+      name: decks[getIndex()] ? decks[getIndex()]["name"] : "An error occured",
+      decks: decks,
+      cards: decks[getIndex()]
+    })
+  }
 /**
   const renderCards = () => {
     const deckIndex = getIndex();
