@@ -32,7 +32,7 @@ export default function EditScreen() {
   
           parsedDecks.forEach(deck => {
             if (deck.cards) {
-              deck.cards = deck.cards.filter(card => card.front.trim() !== "" || card.back.trim() !== "");
+              deck.cards = deck.cards.filter(card => card.front || card.back);
             }
           });
   
@@ -70,13 +70,14 @@ export default function EditScreen() {
     let cards = [...decks[deckIndex].cards];
   
     const lastCard = cards[cards.length - 1];
-    if ((lastCard.front.trim() !== "" || lastCard.back.trim() !== "") && (cards.length === 0 || cards[cards.length - 1].front !== "" || cards[cards.length - 1].back !== "")) {
+    console.log(decks)
+    if ((lastCard.front || lastCard.back) && (cards.length === 0 || cards[cards.length - 1].front !== "" || cards[cards.length - 1].back !== "")) {
       cards.push({ front: "", back: "" });
     }
   
     cards = cards.filter((card, index) => {
       if (index !== cards.length - 1) {
-        return card.front.trim() !== "" || card.back.trim() !== "";
+        return card.front || card.back;
       }
       return true;
     });
@@ -112,7 +113,7 @@ export default function EditScreen() {
   
     updatedDecks[router.params.deckIndex].cards = updatedDecks[router.params.deckIndex].cards.filter((card, index, cards) => {
       if (index !== cards.length - 1) {
-        return card.front.trim() !== "" || card.back.trim() !== "";
+        return card.front || card.back;
       }
       return true;
     });

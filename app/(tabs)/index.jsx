@@ -145,7 +145,7 @@ export default function HomeScreen() {
   
           parsedDecks.forEach(deck => {
             if (deck.cards) {
-              deck.cards = deck.cards.filter(card => card.front.trim() !== "" || card.back.trim() !== "");
+              deck.cards = deck.cards.filter(card => card.front|| card.back);
             }
           });
   
@@ -168,6 +168,9 @@ export default function HomeScreen() {
           cards: [{ front: "", back: "" }]
         }
       ];
+
+      console.log(newDecks)
+
       setDecks(newDecks);
       setNewDeckName('');
       setIsPopupVisible(false);
@@ -208,7 +211,7 @@ export default function HomeScreen() {
       if (index === cards.length - 1) {
         return true;
       }
-      return card.front.trim() !== "" || card.back.trim() !== "";
+      return card.front || card.back;
     });
 
     setDecks(updatedDecks);
@@ -271,7 +274,11 @@ export default function HomeScreen() {
       ))}
         
       {/* New Deck Button*/}
-      <TouchableHighlight className="absolute bottom-10 right-10 text-xl bg-blue-500 p-2 w-12 h-12 flex justify-center rounded-lg" title="+" onPress={() => setIsPopupVisible(true)} >
+      <TouchableHighlight 
+        className="absolute bottom-10 right-10 text-xl bg-blue-500 p-2 w-12 h-12 flex justify-center rounded-lg" 
+        title="+" 
+        onPress={() => setIsPopupVisible(true)} 
+      >
         <Text className='text-5xl text-center text-white'>+</Text>
       </TouchableHighlight>
 
